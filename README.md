@@ -18,10 +18,7 @@ A Mesh Quality Evaluation Neural Network Based on Dynamic Graph Attention
   - `preprocess_grd_meshes()`: Batch processing for GRD files
 
 - **`mesh_dataset.py`** - Dataset classes for mesh data loading
-  - `InMemMeshDataset`: In-memory dataset for small datasets
   - `MeshDataset`: Standard dataset class for larger datasets
-  - `StreamMeshDataset`: Streaming dataset for very large datasets
-  - `GrdDataset`: Specialized dataset for Kaggle GRD data
   - `grd_label()`: Label generation function for GRD files
 
 - **`utils.py`** - Training and utility functions
@@ -68,6 +65,7 @@ train_model(model=model, optimizer=torch.optim.Adam(model.parameters(), lr=0.01,
 - Python 3.8+
 - PyTorch 1.12.1+ (with CUDA support recommended)
 - PyTorch Geometric 2.0.4+
+
 
 
 
