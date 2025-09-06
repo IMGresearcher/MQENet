@@ -56,12 +56,12 @@ dataset = MeshDataset(root='data', raw_file_root='processed',
                           num=1024, label_func=grd_label)
 
 # Initialize model
-model = DeeperGCN(input_channels=8, num_layers=6, hidden_channels=64, 
-                  num_classes=2, dropout=0.1)
+model = DeeperGCN(input_channels=6, num_layers=4, hidden_channels=12, 
+                  num_classes=8, dropout=0.01)
 
 # Train model
 train_model(model, optimizer, criterion, train_loader, val_loader, 
-           model_dict, param_file, epochs=100)
+           model_dict, param_file, epochs=1000)
 ```
 
 ## Dependencies
@@ -71,6 +71,7 @@ train_model(model, optimizer, criterion, train_loader, val_loader,
 - PyTorch Geometric 2.0.4+
 - NumPy, SciPy, Pandas for data processing
 - TorchServe for model deployment
+
 
 
 
