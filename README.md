@@ -34,7 +34,7 @@ A Mesh Quality Evaluation Neural Network Based on Dynamic Graph Attention
 
 ### Training Models
 ```python
-from mesh_dataset import InMemMeshDataset
+from mesh_dataset import MeshDataset
 from model import DeeperGCN
 from utils import train_model
 
@@ -69,6 +69,7 @@ train_model(model=model, optimizer=torch.optim.Adam(model.parameters(), lr=0.01,
 - Python 3.8+
 - PyTorch 1.12.1+ (with CUDA support recommended)
 - PyTorch Geometric 2.0.4+
+
 
 
 
