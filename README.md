@@ -1,6 +1,6 @@
-# MQENet: Mesh Quality Evaluation Network
+# MQENet
 
-A deep learning framework for mesh quality evaluation using graph neural networks. This project implements a comprehensive solution for analyzing and classifying mesh quality based on computational mesh data.
+MQENet: A Mesh Quality Evaluation Neural Network Based on Dynamic Graph Attention.
 
 ## Project Overview
 
@@ -150,3 +150,4 @@ register_model('model_name', '1.0')
 ## License
 
 This project is part of the MEGAS2023 research work. Please refer to the original paper for detailed methodology and experimental results.
+
