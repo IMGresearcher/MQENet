@@ -59,9 +59,23 @@ dataset = MeshDataset(root='data', raw_file_root='processed',
 model = DeeperGCN(input_channels=6, num_layers=4, hidden_channels=12, 
                   num_classes=8, dropout=0.01)
 
-# Train model
-train_model(model, optimizer, criterion, train_loader, val_loader, 
-           model_dict, param_file, epochs=1000)
+from utils import train_model,add_weight_decay,\
+    split_dataset,test_model,print_results,save_model
+
+train_data , val_data ,test_data = split_dataset(mesh)
+
+add_weight_decay(model=model,weight_decay=0.0001)
+
+train_model(model=model, optimizer=torch.optim.Adam(model.parameters(), lr=0.01,amsgrad=True),
+            criterion=nn.CrossEntropyLoss(),train_loader=DataLoader(train_data,batch_size=32, shuffle=True),
+            val_loader=DataLoader(val_data,batch_size=32, shuffle=True),epochs=5000,patience=25,writer=writer,
+            lr_scheduler=torch.optim.lr_scheduler.ReduceLROnPlateau(torch.optim.Adam(model.parameters()), mode='max',
+                                                                    factor=0.1,
+                                                                    patience=10, verbose=True, threshold=0.0001,
+                                                                    threshold_mode='rel', cooldown=0, min_lr=1e-09,
+                                                                    eps=1e-09),
+            grad_clipping_value=torch.nn.utils.clip_grad_norm(model.parameters(), 20, norm_type=2))
+
 ```
 
 ## Dependencies
@@ -71,6 +85,7 @@ train_model(model, optimizer, criterion, train_loader, val_loader,
 - PyTorch Geometric 2.0.4+
 - NumPy, SciPy, Pandas for data processing
 - TorchServe for model deployment
+
 
 
 
