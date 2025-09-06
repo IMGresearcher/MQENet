@@ -2,10 +2,6 @@
 
 MQENet: A Mesh Quality Evaluation Neural Network Based on Dynamic Graph Attention.
 
-## Project Overview
-
-MQENet is designed to evaluate mesh quality through graph-based representations of computational meshes. The framework supports 2D structured meshes (GRD format), converting them into graph structures suitable for deep learning analysis.
-
 ## File Structure
 
 ### Core Files
@@ -79,12 +75,10 @@ train_model(model=model, optimizer=torch.optim.Adam(model.parameters(), lr=0.01,
 ```
 
 ## Dependencies
-
 - Python 3.8+
 - PyTorch 1.12.1+ (with CUDA support recommended)
 - PyTorch Geometric 2.0.4+
-- NumPy, SciPy, Pandas for data processing
-- TorchServe for model deployment
+
 
 
 
