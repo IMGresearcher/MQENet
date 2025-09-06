@@ -14,11 +14,8 @@ A Mesh Quality Evaluation Neural Network Based on Dynamic Graph Attention
 - **`preprocess.py`** - Mesh preprocessing and graph conversion utilities
   - `grd2vertex_graph()`: Converts 2D GRD meshes to vertex-based graphs
   - `grd2element_graph()`: Converts 2D GRD meshes to element-based graphs
-  - `stl2vertex_graph()`: Converts 3D STL meshes to vertex-based graphs
-  - `stl2element_graph()`: Converts 3D STL meshes to element-based graphs
   - `compute_proximity_adjacency()`: Creates adjacency matrices based on spatial proximity
   - `preprocess_grd_meshes()`: Batch processing for GRD files
-  - `preprocess_stl_meshes()`: Batch processing for STL files
 
 - **`mesh_dataset.py`** - Dataset classes for mesh data loading
   - `InMemMeshDataset`: In-memory dataset for small datasets
@@ -34,12 +31,6 @@ A Mesh Quality Evaluation Neural Network Based on Dynamic Graph Attention
   - `split_dataset()`: Dataset splitting utilities
   - `save_model()`: Model checkpointing
   - `add_weight_decay()`: Optimizer configuration
-
-- **`torchserve.py`** - Model deployment and serving utilities
-  - `generate_jit_model()`: Converts models to TorchScript for deployment
-  - `pack_model()`: Creates MAR files for TorchServe deployment
-  - `register_model()`: Registers models with TorchServe
-  - `scale_model()`: Manages model scaling
 
 ### Training Models
 ```python
@@ -78,6 +69,7 @@ train_model(model=model, optimizer=torch.optim.Adam(model.parameters(), lr=0.01,
 - Python 3.8+
 - PyTorch 1.12.1+ (with CUDA support recommended)
 - PyTorch Geometric 2.0.4+
+
 
 
 
