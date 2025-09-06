@@ -44,7 +44,6 @@ MQENet is designed to evaluate mesh quality through graph-based representations 
   - `pack_model()`: Creates MAR files for TorchServe deployment
   - `register_model()`: Registers models with TorchServe
   - `scale_model()`: Manages model scaling
-  - Model management functions for production deployment
 
 ### Training Models
 ```python
@@ -72,5 +71,6 @@ train_model(model, optimizer, criterion, train_loader, val_loader,
 - PyTorch Geometric 2.0.4+
 - NumPy, SciPy, Pandas for data processing
 - TorchServe for model deployment
+
 
 
